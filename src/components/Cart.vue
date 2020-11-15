@@ -73,17 +73,17 @@
         </v-col>
       </v-row>
     </v-container>
-    <v-card  class="accent" >
+    <v-card  class="cyan lighten-5" >
       <v-container>
         <v-row no-gutters>
           <v-col class="col-12 col-md-4 col-sm-12">
             <v-row >
               <v-col class="col-12 col-sm-3 pr-4 hidden-sm-only" align="right">
-                <v-icon class="display-2">mdi-truck</v-icon>
+                <v-icon class="display-2">mdi-account-multiple-check</v-icon>
               </v-col>
               <v-col class="col-12 col-sm-9 pr-4">
                 <h3 class="font-weight-light">優質講師</h3>
-                <p class="font-weight-thin">Free Shipping over $300</p>
+                <p class="font-weight-thin">Leadpact的講師都是精挑細選，不僅具備專業領域知識，同時也精於引導式的教學。</p>
               </v-col>
             </v-row>
           </v-col>
@@ -94,7 +94,7 @@
               </v-col>
               <v-col  class="col-12 col-sm-9 pr-4">
                 <h3 class="font-weight-light">課程品質保證</h3>
-                <p class="font-weight-thin">30 Days Money Back Guarantee</p>
+                <p class="font-weight-thin">每一堂課都經過團隊多次測試，Leadpact努力創造一個順暢的學習環境。</p>
               </v-col>
             </v-row>
           </v-col>
@@ -105,7 +105,7 @@
               </v-col>
               <v-col  class="col-12 col-sm-9 pr-4">
                 <h3 class="font-weight-light">安全環境</h3>
-                <p class="font-weight-thin">24/7 Available Support</p>
+                <p class="font-weight-thin">在Leadpact上課妳可以盡情參與和分享你的一切。</p>
               </v-col>
             </v-row>
           </v-col>

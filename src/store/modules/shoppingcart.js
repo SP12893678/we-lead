@@ -2,7 +2,7 @@ import axios from 'axios'
 const $http=axios;
 const initState=function(){
   return{
-    cart_items:[{course_id:1,teacher_name:"談驊",course_price:100,course_name:"履歷表撰寫",course_start_time:"2020-01-01"},{course_id:1,teacher_name:"談驊",course_price:100,course_name:"履歷表撰寫",course_start_time:"2020-01-01"}],
+    cart_items:[{course_id:1,teacher_name:"談驊",course_price:800,course_name:"履歷表重塑",course_start_time:"2021-01-13"}],
   }
 };
 const state = initState();

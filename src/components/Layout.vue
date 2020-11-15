@@ -11,7 +11,7 @@
       <v-toolbar-title
         style="width: 350px"
       >
-        <a href="/" class="white--text" style="text-decoration: none"><v-icon>mdi-truck</v-icon>&nbsp;LeadPact</a>
+        <a href="/" class="white--text" style="text-decoration: none"><v-icon>mdi-alpha-l-box</v-icon>&nbsp;LeadPact</a>
       </v-toolbar-title>
       <v-spacer />
       <v-btn icon>
@@ -67,7 +67,7 @@
         flat
         tile
         width="100%"
-        class="blue darken-2 white--text text-center"
+        class="blue-grey darken-3 white--text text-center"
       >   <v-row>
           <v-col>
           <v-btn
@@ -75,7 +75,7 @@
             icon
           >
             <v-icon size="24px">mdi-home</v-icon>
-            台北市xx區xx大樓5號
+            台北市中山區民權東路三段
           </v-btn>
           </v-col>
            <v-col>
@@ -84,7 +84,7 @@
             icon
           >
             <v-icon size="24px">mdi-phone</v-icon>
-            xxxx@gmail.com
+            02-2222-2222
           </v-btn> 
            </v-col>
            <v-col>
@@ -92,13 +92,13 @@
             class="mx-4 white--text"
             icon
           >
-            <v-icon size="24px" left>mdi-email</v-icon> xxxx@gmail.com
+            <v-icon size="24px" left>mdi-email</v-icon> info@leadpact.co
           </v-btn> 
            </v-col>
            </v-row>
 
                 <v-card-text class="white--text pt-0">
-                    成為更好的領導者
+                    Lead to impact - 成為更好的領導者
                 </v-card-text>
 
                 <v-divider></v-divider>

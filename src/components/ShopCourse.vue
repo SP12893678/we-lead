@@ -96,7 +96,7 @@
                             <h3 class="mb-2">${{pro.course_price}}</h3>
                             <v-btn
                               depressed
-                              color="primary"
+                              color="primary" @click="$router.push({path:'/cart'})"
                             >
                               購買
                             </v-btn>
