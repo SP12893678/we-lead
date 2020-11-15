@@ -7,19 +7,20 @@ import TeacherIntro from '@/components/TeacherIntro'
 import Post from '@/components/Post'
 import Cart from '@/components/Cart'
 import Layout from '@/components/Layout'
+import Login from '@/components/Login'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
       component: Layout,
-      children:[
+      children: [
         {
-          path:'/',
-          component:Home,
-          name:'Home'
+          path: '/',
+          component: Home,
+          name: 'Home'
         },
         {
           path:'/ShopCourse',
@@ -27,9 +28,9 @@ export default new Router({
           name:'ShopCourse'
         },
         {
-          path:'/product',
-          component:Product,
-          name:'Product'
+          path: '/product',
+          component: Product,
+          name: 'Product'
         },
         {
           path:'/TeacherIntro',
@@ -37,20 +38,30 @@ export default new Router({
           name:'TeacherIntro'
         },
         {
-          path:'/post',
-          component:Post,
-          name:'Post'
+          path: '/post',
+          component: Post,
+          name: 'Post'
         },
         {
-          path:'/cart',
-          component:Cart,
-          name:'Cart'
+          path: '/cart',
+          component: Cart,
+          name: 'Cart'
         }
       ]
-
+    },
+    {
+      path: '/login',
+      component: Login,
+      name: 'Login'
     }
   ],
-    mode:'history'
+  mode: 'history'
 },
 
-  )
+)
+
+router.beforeEach(async (to, from, next) => {
+  next()
+})
+
+export default router
