@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-container>
-      <p class="display-3 font-weight-light	text-center pa-4">Read About Fashion</p>
+      <p class="display-3 font-weight-light	text-center pa-4">專業師資</p>
         <div class="row">
           <div class="col-md-4 col-sm-4 col-xs-12">
             <v-card
@@ -14,17 +14,17 @@
               <v-img
                 class="white--text align-end"
                 height="400px"
-                :src="require('../assets/img/home/slider2.jpg')"
+                :src="require('../assets/img/home/home1.jpg')"
               >
-                <v-card-title>Top 10 Fashion of the Week</v-card-title>
+                <v-card-title>Teacher name</v-card-title>
               </v-img>
 
-              <v-card-subtitle class="pb-0">Lorem ipsum</v-card-subtitle>
+              <v-card-subtitle class="pb-0">擔任講師15年</v-card-subtitle>
 
               <v-card-text class="text--primary">
 
-                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh venenatis cras sed felis eget velit aliquet sagittis id. Enim praesent elementum facilisis leo vel fringilla est ullamcorper.
-
+                <div>
+                  專長Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh venenatis cras sed felis eget velit aliquet sagittis id. Enim praesent elementum facilisis leo vel fringilla est ullamcorper.
                 </div>
               </v-card-text>
 
@@ -33,7 +33,7 @@
                   color="orange"
                   text
                 >
-                  Read More
+                  相關課程
                 </v-btn>
               </v-card-actions>
             </v-card>

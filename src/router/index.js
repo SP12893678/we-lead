@@ -1,13 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
-import Shop from '@/components/Shop'
+import ShopCourse from '@/components/ShopCourse'
 import Product from '@/components/Product'
-import Blog from '@/components/Blog'
+import TeacherIntro from '@/components/TeacherIntro'
 import Post from '@/components/Post'
 import Cart from '@/components/Cart'
 import Layout from '@/components/Layout'
 import Login from '@/components/Login'
+import TeachCourse from '@/components/TeachCourse'
+import NewCourse from '@/components/NewCourse'
+import EditCourse from '@/components/EditCourse'
 
 Vue.use(Router)
 
@@ -23,9 +26,9 @@ const router = new Router({
           name: 'Home'
         },
         {
-          path: '/shop',
-          component: Shop,
-          name: 'Shop'
+          path:'/ShopCourse',
+          component:ShopCourse,
+          name:'ShopCourse'
         },
         {
           path: '/product',
@@ -33,9 +36,9 @@ const router = new Router({
           name: 'Product'
         },
         {
-          path: '/blog',
-          component: Blog,
-          name: 'Blog'
+          path:'/TeacherIntro',
+          component:TeacherIntro,
+          name:'TeacherIntro'
         },
         {
           path: '/post',
@@ -46,6 +49,21 @@ const router = new Router({
           path: '/cart',
           component: Cart,
           name: 'Cart'
+        },
+        {
+          path: '/teachcourse',
+          component: TeachCourse,
+          name: 'TeachCourse'
+        },
+        {
+          path: '/newcourse',
+          component: NewCourse,
+          name: 'NewCourse'
+        },
+        {
+          path: '/editcourse',
+          component: EditCourse,
+          name: 'EditCourse'
         }
       ]
     },
