@@ -4,6 +4,8 @@ import createPersistedState from "vuex-persistedstate";
 import user from './modules/user'
 import notify from './modules/notify'
 import validation from './modules/validation'
+import shoppingcart from './modules/shoppingcart'
+
 import http from './modules/http'
 
 Vue.use(Vuex)
@@ -13,6 +15,7 @@ const _modules=function(){
     validation:validation,
     http:http,
     notify:notify,
+    shoppingcart:shoppingcart
   };
 }
 export default new Vuex.Store({
