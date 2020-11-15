@@ -3,7 +3,7 @@
     <v-app-bar
       :clipped-left="$vuetify.breakpoint.lgAndUp"
       app
-      color="primary"
+      color="blue darken-2"
       dark
     >
 <!--      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />-->
@@ -11,7 +11,7 @@
       <v-toolbar-title
         style="width: 350px"
       >
-        <a href="/" class="white--text" style="text-decoration: none"><v-icon>mdi-truck</v-icon>&nbsp;WeLead</a>
+        <a href="/" class="white--text" style="text-decoration: none"><v-icon>mdi-truck</v-icon>&nbsp;LeadPact</a>
       </v-toolbar-title>
       <v-spacer />
       <v-btn icon>
@@ -40,22 +40,22 @@
     </v-app-bar>
     <v-content>
       <v-bottom-navigation
+        v-if="this.$router.history.current['path'] !== '/'"
         :value="activeBtn"
         color="primary"
         horizontal
       >
-        <a href="/" class="v-btn">
+        <v-btn href="/" class="v-btn">
           <span>首頁</span>
-        </a>
-        <v-menu open-on-hover offset-y>
-          <template v-slot:activator="{ on }">
-            <v-btn href="/shopCourse">
-              <span>找相關課程</span>
-            </v-btn>
-          </template>
-        </v-menu>
-        <v-btn href="/teacherIntro">
+        </v-btn>
+          <v-btn href="/shopCourse">
+            <span>找相關課程</span>
+          </v-btn>
+        <!-- <v-btn href="/teacherIntro">
           <span>師資介紹</span>
+        </v-btn> -->
+         <v-btn href="/AboutUs">
+          <span>關於我們</span>
         </v-btn>
       </v-bottom-navigation>
     </v-content>
@@ -67,52 +67,44 @@
         flat
         tile
         width="100%"
-        class="secondary white--text text-center"
-      >
-        <v-card-text>
+        class="blue darken-2 white--text text-center"
+      >   <v-row>
+          <v-col>
           <v-btn
             class="mx-4 white--text"
             icon
           >
             <v-icon size="24px">mdi-home</v-icon>
+            台北市xx區xx大樓5號
           </v-btn>
+          </v-col>
+           <v-col>
           <v-btn
             class="mx-4 white--text"
             icon
           >
-            <v-icon size="24px">mdi-email</v-icon>
-          </v-btn>
+            <v-icon size="24px">mdi-phone</v-icon>
+            xxxx@gmail.com
+          </v-btn> 
+           </v-col>
+           <v-col>
           <v-btn
             class="mx-4 white--text"
             icon
           >
-            <v-icon size="24px">mdi-calendar</v-icon>
-          </v-btn>
-           <v-btn
-            class="mx-4 white--text"
-            icon
-          >
-            <v-icon size="24px">mdi-delete</v-icon>
-          </v-btn>
-
-        </v-card-text>
+            <v-icon size="24px" left>mdi-email</v-icon> xxxx@gmail.com
+          </v-btn> 
+           </v-col>
+           </v-row>
 
                 <v-card-text class="white--text pt-0">
-                    Phasellus feugiat arcu sapien, et iaculis ipsum elementum
-                    sit amet. Mauris cursus commodo interdum. Praesent ut risus
-                    eget metus luctus accumsan id ultrices nunc. Sed at orci sed
-                    massa consectetur dignissim a sit amet dui. Duis commodo
-                    vitae velit et faucibus. Morbi vehicula lacinia malesuada.
-                    Nulla placerat augue vel ipsum ultrices, cursus iaculis dui
-                    sollicitudin. Vestibulum eu ipsum vel diam elementum tempor
-                    vel ut orci. Orci varius natoque penatibus et magnis dis
-                    parturient montes, nascetur ridiculus mus.
+                    成為更好的領導者
                 </v-card-text>
 
                 <v-divider></v-divider>
 
                 <v-card-text class="white--text">
-                    {{ new Date().getFullYear() }} — <strong>ShipIT</strong>
+                    {{ new Date().getFullYear() }} — <strong>LeadPact</strong>
                 </v-card-text>
             </v-card>
         </v-footer>
@@ -122,7 +114,7 @@
 export default {
     data() {
         return {
-            activeBtn: 1,
+            activeBtn: this.$router.history.current['path']=='/shopCourse'?1:2,
         };
     },
     methods: {},

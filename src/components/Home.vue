@@ -55,7 +55,7 @@
       </div>
     </div>
     <v-container>
-      <v-row no-gutters>
+      <!-- <v-row no-gutters>
         <v-col :cols="12">
           <v-card-text
             class=""
@@ -201,9 +201,9 @@
             </div>
           </v-card-text>
         </v-col>
-      </v-row>
+      </v-row> -->
     </v-container>
-    <v-card  class="accent" >
+    <!-- <v-card  class="accent" >
       <v-container>
         <v-row no-gutters>
           <v-col class="col-12 col-md-4 col-sm-12">
@@ -241,7 +241,7 @@
           </v-col>
         </v-row>
       </v-container>
-    </v-card>
+    </v-card> -->
   </div>
 </template>
 
@@ -249,6 +249,7 @@
     export default {
         data () {
             return {
+                tag_id:0,
                 items: [
                     { title: 'Click Me' },
                     { title: 'Click Me' },
@@ -272,6 +273,14 @@
                 ],
             }
         },
+        methods:{
+          goToProduct(){
+            this.$router.push({
+              path: '/shopCourse',
+              query: { tag: this.tag_id }
+            });
+          },
+        }
     }
 </script>
 <style>

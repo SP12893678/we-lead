@@ -11,6 +11,7 @@ import Login from '@/components/Login'
 import TeachCourse from '@/components/TeachCourse'
 import NewCourse from '@/components/NewCourse'
 import EditCourse from '@/components/EditCourse'
+import AboutUs from '@/components/AboutUs'
 
 Vue.use(Router)
 
@@ -28,7 +29,8 @@ const router = new Router({
         {
           path:'/ShopCourse',
           component:ShopCourse,
-          name:'ShopCourse'
+          name:'ShopCourse',
+          props:true
         },
         {
           path: '/product',
@@ -64,6 +66,11 @@ const router = new Router({
           path: '/editcourse',
           component: EditCourse,
           name: 'EditCourse'
+        },
+        {
+          path: '/AboutUs',
+          component: AboutUs,
+          name: 'AboutUs'
         }
       ]
     },

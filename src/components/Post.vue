@@ -2,7 +2,7 @@
   <div>
     <v-container>
       <p class="display-3 font-weight-light	text-center pa-4">Best brands for fashion</p>
-      <p class="overline text-center">By <b>John Doe</b> | January 24,2020</p>
+      <p class="overline text-center">By <b>Hanaah</b> | January 24,2020</p>
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
           <v-img
