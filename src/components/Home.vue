@@ -14,7 +14,7 @@
           >
             <h1 class="text-center font-size">找領導課程</h1>
             <div class="text-center mt-2">
-               <v-btn  href="/shop" class="white--text " outlined>Find Out</v-btn>
+               <v-btn  href="/shopCourse" class="white--text " outlined>Find Out</v-btn>
             </div>
           </v-img>
         </v-card>
@@ -31,7 +31,7 @@
           >
             <h1 class="text-center font-size">找人脈</h1>
             <div class="text-center mt-2">
-               <v-btn  href="/shop" class="white--text " outlined>Find Out</v-btn>
+               <v-btn  href="/shopCourse" class="white--text " outlined>Find Out</v-btn>
             </div>
           </v-img>
         </v-card>
@@ -48,7 +48,7 @@
           >
             <h1 class="text-center font-size">愛分享</h1>
             <div class="text-center mt-2">
-               <v-btn  href="/shop" class="white--text " outlined>Share it</v-btn>
+               <v-btn  href="/shopCourse" class="white--text " outlined>Share it</v-btn>
             </div>
           </v-img>
         </v-card>
