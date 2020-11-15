@@ -8,6 +8,9 @@ import Post from '@/components/Post'
 import Cart from '@/components/Cart'
 import Layout from '@/components/Layout'
 import Login from '@/components/Login'
+import TeachCourse from '@/components/TeachCourse'
+import NewCourse from '@/components/NewCourse'
+import EditCourse from '@/components/EditCourse'
 
 Vue.use(Router)
 
@@ -46,6 +49,21 @@ const router = new Router({
           path: '/cart',
           component: Cart,
           name: 'Cart'
+        },
+        {
+          path: '/teachcourse',
+          component: TeachCourse,
+          name: 'TeachCourse'
+        },
+        {
+          path: '/newcourse',
+          component: NewCourse,
+          name: 'NewCourse'
+        },
+        {
+          path: '/editcourse',
+          component: EditCourse,
+          name: 'EditCourse'
         }
       ]
     },
