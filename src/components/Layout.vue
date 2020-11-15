@@ -122,13 +122,6 @@
 export default {
     data() {
         return {
-            items: [
-                { title: "T-Shirts" },
-                { title: "Jackets" },
-                { title: "Shirts" },
-                { title: "Jeans" },
-                { title: "Shoes" },
-            ],
             activeBtn: 1,
         };
     },
