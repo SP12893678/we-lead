@@ -31,8 +31,8 @@
             rating:4.5,
             intro:{
                 bannerImg:require('../assets/img/home/slider2.jpg'),
-                title:'LeadPact',
-                subtitle:'最具影響力的領導。。。',
+                title:'Leadpact',
+                subtitle:'最具影響力的領導課程',
                 content:'成立於'
             }
         }),

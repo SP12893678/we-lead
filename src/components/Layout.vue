@@ -11,7 +11,7 @@
       <v-toolbar-title
         style="width: 350px"
       >
-        <a href="/" class="white--text" style="text-decoration: none"><v-icon>mdi-alpha-l-box</v-icon>&nbsp;LeadPact</a>
+        <a href="/" class="white--text" style="text-decoration: none"><v-icon>mdi-alpha-l-box</v-icon>&nbsp;Leadpact</a>
       </v-toolbar-title>
       <v-spacer />
       <v-btn icon>
@@ -104,7 +104,7 @@
                 <v-divider></v-divider>
 
                 <v-card-text class="white--text">
-                    {{ new Date().getFullYear() }} — <strong>LeadPact</strong>
+                    {{ new Date().getFullYear() }} — <strong>Leadpact</strong>
                 </v-card-text>
             </v-card>
         </v-footer>
