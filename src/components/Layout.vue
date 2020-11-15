@@ -11,24 +11,16 @@
       <v-toolbar-title
         style="width: 350px"
       >
-        <a href="/" class="white--text" style="text-decoration: none"><v-icon>mdi-truck</v-icon>&nbsp;ShipIT</a>
+        <a href="/" class="white--text" style="text-decoration: none"><v-icon>mdi-truck</v-icon>&nbsp;WeLead</a>
       </v-toolbar-title>
-      <v-text-field
-        flat
-        solo-inverted
-        hide-details
-        prepend-inner-icon="mdi-magnify"
-        label="Search"
-        class="hidden-sm-and-down pl-10 ml-4"
-      />
       <v-spacer />
       <v-btn icon>
         <v-icon>mdi-account-circle</v-icon>
       </v-btn>
       <v-btn v-on="on" icon>
         <v-badge
-          content="2"
-          value="2"
+          content="0"
+          value=""
           color="green"
           overlap
         >
@@ -37,8 +29,8 @@
       </v-btn>
       <v-btn v-on="on" href="/cart" icon>
         <v-badge
-          content="2"
-          value="2"
+          content="0"
+          value=""
           color="green"
           overlap
         >
@@ -53,36 +45,17 @@
         horizontal
       >
         <a href="/" class="v-btn">
-          <span>Home</span>
+          <span>首頁</span>
         </a>
         <v-menu open-on-hover offset-y>
           <template v-slot:activator="{ on }">
-            <v-btn v-on="on">
-              <span>Shop</span>
+            <v-btn href="/course">
+              <span>找相關課程</span>
             </v-btn>
           </template>
-          <v-card
-            class="mx-auto"
-            max-width="344"
-            outlined
-          >
-
-            <v-list-item
-              v-for="(item, index) in items"
-              :key="index"
-              @click=""
-              href="/shop"
-            >
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-list-item>
-
-          </v-card>
         </v-menu>
-        <a href="/product" class="v-btn">
-          <span>Product</span>
-        </a>
-        <v-btn href="/blog">
-          <span>Blog</span>
+        <v-btn href="/teacherIntro">
+          <span>師資介紹</span>
         </v-btn>
       </v-bottom-navigation>
     </v-content>

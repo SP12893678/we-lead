@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
-import Shop from '@/components/Shop'
+import ShopCourse from '@/components/ShopCourse'
 import Product from '@/components/Product'
-import Blog from '@/components/Blog'
+import TeacherIntro from '@/components/TeacherIntro'
 import Post from '@/components/Post'
 import Cart from '@/components/Cart'
 import Layout from '@/components/Layout'
@@ -22,9 +22,9 @@ export default new Router({
           name:'Home'
         },
         {
-          path:'/shop',
-          component:Shop,
-          name:'Shop'
+          path:'/ShopCourse',
+          component:ShopCourse,
+          name:'ShopCourse'
         },
         {
           path:'/product',
@@ -32,9 +32,9 @@ export default new Router({
           name:'Product'
         },
         {
-          path:'/blog',
-          component:Blog,
-          name:'Blog'
+          path:'/TeacherIntro',
+          component:TeacherIntro,
+          name:'TeacherIntro'
         },
         {
           path:'/post',
