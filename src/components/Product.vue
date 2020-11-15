@@ -5,13 +5,13 @@
                 <v-col cols="8" lg="8" md="8" sm="12">
                     <v-img
                         height="100%"
-                        :src="require('../assets/img/home/slider4.jpg')"
+                        :src="`../${this.course.image}`"
                     ></v-img>
                 </v-col>
                 <v-col cols="4" lg="4" md="4" sm="12">
                     <v-card>
                         <v-card-title class="font-weight-black display-1">{{
-                            course.name
+                            this.course.name
                         }}</v-card-title>
                         <v-card-subtitle class="font-weight-bold">{{
                             course.intro
@@ -19,7 +19,7 @@
                         <v-divider class="mx-4"></v-divider>
                         <v-card-text class="pb-2">
                             <v-chip color="blue" outlined small
-                                >線上課程</v-chip
+                                >{{this.course.mode}}</v-chip
                             >
                         </v-card-text>
 
@@ -27,17 +27,17 @@
                             <h3>{{ `課程時長: ${course.hours}小時` }}</h3>
                         </v-card-text>
                         <v-card-text class="pb-2 pt-2">
-                            <h3>課程時間: 2020/10/20 18:00</h3>
+                            <h3>課程時間: {{this.course.start_time}}</h3>
                         </v-card-text>
 
                         <v-card-text class="pb-2 pt-0">
                             <v-row>
                                 <v-col>
-                                    <h3>剩餘名額 3 人</h3>
+                                    <h3>剩餘名額 {{this.course.capacity}} 人</h3>
                                 </v-col>
                                 <v-col>
                                     <h1 class="text-right teal--text">
-                                        {{ `$${course.price}` }}
+                                        {{ `$${this.course.price}` }}
                                     </h1>
                                 </v-col>
                             </v-row>
@@ -76,7 +76,7 @@
 
                                             <v-list-item-content>
                                                 <v-list-item-title
-                                                    >Johnson.Dc</v-list-item-title
+                                                    >{{this.course.teachers}}</v-list-item-title
                                                 >
                                                 <!-- <v-list-item-subtitle
                                                     >本次講師</v-list-item-subtitle
@@ -243,16 +243,16 @@ export default {
         },
     }),
     mounted(){
-      console.log(this.$route.params.id)
-      this.name= this.$route.params.name
-      this.intro=this.$route.params.intro
-      this.capacity= this.$route.params.capacity
-      this.mode= this.$route.params.mode
-      this.price= this.$route.params.price
-      this.start_time=this.$route.params.start_time
-      this.hours=this.$route.params.hours
-      this.image=require(this.$route.params.hours)
-      this.teachers = this.$route.params.teachers
+      console.log(this.$route.params)
+      this.course.name= this.$route.params.name
+      this.course.intro=this.$route.params.intro
+      this.course.capacity= this.$route.params.capacity
+      this.course.mode= this.$route.params.mode
+      this.course.price= this.$route.params.price
+      this.course.start_time=this.$route.params.start_time
+      this.course.hours=this.$route.params.hours
+      this.course.image=this.$route.params.image
+      this.course.teachers = this.$route.params.teachers
     }
 };
 </script>

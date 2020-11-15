@@ -74,8 +74,8 @@
                   </v-img>
                     <v-list-item>
                       <v-list-item-content>
-                        <v-list-item-title class="headline font-weight-black mt-2 mb-2">
-                          {{pro.course_name}}
+                        <v-list-item-title class="font-weight-black mt-2 mb-2">
+                          <h3>{{pro.course_name}}</h3>
                         </v-list-item-title>
                         <div class="boxx">
                         <p class="ellipsiss">{{pro.course_intro}}</p>
@@ -283,7 +283,7 @@
                     course_start_time: '2021/1/27 (三) 19:30-21:30',
                     course_hours: '120分鐘',
                     course_mode:'線上課程',
-                    course_image:require('../assets/img/shop/course1.jpg'),
+                    course_image:require('../assets/img/shop/course3.jpg'),
                     lecture_name:'Jessica Wu',
                     lecture_avatar:require("../assets/img/teacher/tanhua.jpg"),
                     course_teacher_name:'談驊'
@@ -299,7 +299,7 @@
                     course_start_time: '2021/1/29 (五) 10:00-12:00',
                     course_hours: '120分鐘',
                     course_mode:'線上課程',
-                    course_image:require('../assets/img/shop/course1.jpg'),
+                    course_image:require('../assets/img/shop/course3.jpg'),
                     lecture_name:'Jessica Wu',
                     lecture_avatar:require("../assets/img/teacher/tanhua.jpg"),
                     course_teacher_name:'談驊'
@@ -317,9 +317,9 @@
                     course_start_time: '2021/1/29 (五) 10:00-12:00',
                     course_hours: '120分鐘',
                     course_mode:'線上課程',
-                    course_image:require('../assets/img/shop/course1.jpg'),
+                    course_image:require('../assets/img/shop/course3.jpg'),
                     lecture_name:'Jessica Wu',
-                    lecture_avatar:require("../assets/img/teacher/tanhua.jpg"),
+                    lecture_avatar:require("../assets/img/teacher/wang.jpg"),
                     course_teacher_name:'王芬瑛'
                 },
                 {
@@ -337,7 +337,7 @@
                     course_mode:'線上課程',
                     course_image:require('../assets/img/shop/course1.jpg'),
                     lecture_name:'Jessica Wu',
-                    lecture_avatar:require("../assets/img/teacher/tanhua.jpg"),
+                    lecture_avatar:require("../assets/img/teacher/wang.jpg"),
                     course_teacher_name:'王芬瑛'
                 },
                 {
@@ -355,7 +355,7 @@
                     course_mode:'線上課程',
                     course_image:require('../assets/img/shop/course1.jpg'),
                     lecture_name:'Jessica Wu',
-                    lecture_avatar:require("../assets/img/teacher/tanhua.jpg"),
+                    lecture_avatar:require("../assets/img/teacher/wang.jpg"),
                     course_teacher_name:'王芬瑛'
                 },
                 {
@@ -371,7 +371,7 @@
                     course_mode:'線上課程',
                     course_image:require('../assets/img/shop/course1.jpg'),
                     lecture_name:'Jessica Wu',
-                    lecture_avatar:require("../assets/img/teacher/tanhua.jpg"),
+                    lecture_avatar:require("../assets/img/teacher/shenghua.jpg"),
                     course_teacher_name:'王聖華'
                 },
                 { 
@@ -387,7 +387,7 @@
                     course_mode:'線上課程',
                     course_image:require('../assets/img/shop/course1.jpg'),
                     lecture_name:'Jessica Wu',
-                    lecture_avatar:require("../assets/img/teacher/tanhua.jpg"),
+                    lecture_avatar:require("../assets/img/teacher/yanxuan.png"),
                     course_teacher_name:'何妍萱'
                 },
                 { 
@@ -403,7 +403,7 @@
                     course_mode:'線上課程',
                     course_image:require('../assets/img/shop/course1.jpg'),
                     lecture_name:'Jessica Wu',
-                    lecture_avatar:require("../assets/img/teacher/tanhua.jpg"),
+                    lecture_avatar:require("../assets/img/teacher/haonong.jpg"),
                     course_teacher_name:'池皓農'
                 },
                 { 
@@ -423,7 +423,7 @@
                     course_mode:'線上課程',
                     course_image:require('../assets/img/shop/course1.jpg'),
                     lecture_name:'Jessica Wu',
-                    lecture_avatar:require("../assets/img/teacher/tanhua.jpg"),
+                    lecture_avatar:require("../assets/img/teacher/tingwei.jpg"),
                     course_teacher_name:'史庭瑋'
                 },
             ]
