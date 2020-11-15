@@ -26,9 +26,9 @@ const router = new Router({
           name: 'Home'
         },
         {
-          path:'/ShopCourse',
-          component:ShopCourse,
-          name:'ShopCourse'
+          path: '/ShopCourse',
+          component: ShopCourse,
+          name: 'ShopCourse'
         },
         {
           path: '/product',
@@ -36,9 +36,9 @@ const router = new Router({
           name: 'Product'
         },
         {
-          path:'/TeacherIntro',
-          component:TeacherIntro,
-          name:'TeacherIntro'
+          path: '/TeacherIntro',
+          component: TeacherIntro,
+          name: 'TeacherIntro'
         },
         {
           path: '/post',
@@ -63,7 +63,8 @@ const router = new Router({
         {
           path: '/editcourse',
           component: EditCourse,
-          name: 'EditCourse'
+          name: 'EditCourse',
+          props: true
         }
       ]
     },
