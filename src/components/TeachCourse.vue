@@ -153,7 +153,7 @@
                                     </v-avatar>
                                     <v-spacer></v-spacer>
                                     <v-btn
-                                        to="/editcourse"
+                                        @click="goToEditPage(pro.id)"
                                         color="blue"
                                         outlined
                                         >編輯</v-btn
@@ -261,6 +261,12 @@ export default {
                 },
             ],
         };
+    },
+    methods: {
+        goToEditPage(id) {
+            console.log(this.$route);
+            this.$router.push({ path: "/editcourse", query: { id: id } });
+        },
     },
 };
 </script>

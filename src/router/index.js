@@ -38,9 +38,9 @@ const router = new Router({
           name: 'Product'
         },
         {
-          path:'/TeacherIntro',
-          component:TeacherIntro,
-          name:'TeacherIntro'
+          path: '/TeacherIntro',
+          component: TeacherIntro,
+          name: 'TeacherIntro'
         },
         {
           path: '/post',
