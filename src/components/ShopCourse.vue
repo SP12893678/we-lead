@@ -6,13 +6,13 @@
          class="col-md-3 col-sm-3 col-xs-12"
         >
           <v-card outlined>
-            <v-card-title>Filters</v-card-title>
+            <v-card-title>分類 Catergory</v-card-title>
             <v-divider></v-divider>
             <template>
               <v-treeview :items="items" :open="[1]" :active="[5]" :selected-color="'#fff'" activatable open-on-click dense></v-treeview>
             </template>
             <v-divider></v-divider>
-            <v-card-title>Price</v-card-title>
+            <v-card-title>$價錢 Price</v-card-title>
             <v-range-slider
               v-model="range"
               :max="max"
@@ -45,14 +45,14 @@
               </v-col>
             </v-row>
             <v-divider></v-divider>
-            <v-card-title class="pb-0">Customer Rating</v-card-title>
+            <!-- <v-card-title class="pb-0">Customer Rating</v-card-title>
             <v-container class="pt-0"  fluid>
               <v-checkbox append-icon="mdi-star" label="4 & above" hide-details dense></v-checkbox>
               <v-checkbox append-icon="mdi-star" label="3 & above" hide-details dense></v-checkbox>
               <v-checkbox append-icon="mdi-star" label="2 & above" hide-details dense></v-checkbox>
               <v-checkbox append-icon="mdi-star" label="1 & above" hide-details dense></v-checkbox>
             </v-container>
-            <v-divider></v-divider>
+            <v-divider></v-divider> -->
 
           </v-card>
         </div>
@@ -61,7 +61,7 @@
         >
           <v-row dense>
             <v-col align-self="end" class="mb-2">
-              <small>Showing 1-12 of 200 products</small>
+              <small>顯示 1-12 筆 {{products.length}} 內容</small>
             </v-col>
             <v-col>
               <v-text-field
@@ -176,13 +176,12 @@
     export default {
         data: () => ({
             range: [0, 10000],
-            select:'Popularity',
+            select:'最新上架',
             options: [
-                'Default',
-                'Popularity',
-                'Relevance',
-                'Price: Low to High',
-                'Price: High to Low',
+                '最新上架',
+                '熱賣程度',
+                '價格:低到高',
+                '價格:高到低',
             ],
             page:1,
             breadcrums: [
@@ -205,110 +204,103 @@
             min:0,
             max:10000,
             items: [
-                {
-                    id: 2,
-                    name: 'Shoes',
-                    children: [
-                        { id: 2, name: 'Casuals' },
-                        { id: 3, name: 'Formals' },
-                        { id: 4, name: 'Sneakers' },
-                    ],
+              {
+                    id: 1,
+                    name: '領導',
+                    // children: [
+                    //     { id: 2, name: 'Casuals' },
+                    //     { id: 3, name: 'Formals' },
+                    //     { id: 4, name: 'Sneakers' },
+                    // ],
                 },
                 {
-                    id: 1,
-                    name: 'Clothing',
-                    children: [
-                        { id: 5, name: 'Shirts' },
-                        { id: 6, name: 'Tops' },
-                        { id: 7, name: 'Tunics' },
-                        { id: 8, name: 'Bodysuit' },
-                    ],
-                }
+                    id: 2,
+                    name: '交流',
+                },
+                // {
+                //     id: 3,
+                //     name: 'Clothing',
+                // }
             ],
             products:[
                 {
-                    id:1,
-                    name:'BLACK TEE',
-                    type:'Jackets',
-                    price:'18.00',
-                    src:require('../assets/img/home/slider2.jpg')
+                    course_id:123,
+                    course_name:'你不知道的集中式',
+                    course_tags:[],
+                    course_intro:'',
+                    course_capacity:3,
+                    couse_category:'Jackets',
+                    course_price:18.00,
+                    course_start_time: '2020.01.20',
+                    course_hours: '1小時30分鐘',
+                    course_mode:'線上課程',
+                    course_image:require('../assets/img/home/slider2.jpg')
                 },
                 {
-                    id:2,
-                    name:'WHITE TEE',
-                    type:'Polo',
-                    price:'40.00',
-                    src:require('../assets/img/shop/2.jpg')
+                    course_id:1324,
+                    course_name:'你不知道的集中式',
+                    course_tags:[],
+                    course_intro:'',
+                    course_capacity:3,
+                    couse_category:'Jackets',
+                    course_price:18.00,
+                    course_start_time: '2020.01.20',
+                    course_hours: '1小時30分鐘',
+                    course_mode:'線上課程',
+                    course_image:require('../assets/img/home/slider2.jpg')
                 },
                 {
-                    id:3,
-                    name:'Zara limited...',
-                    type:'Denim',
-                    price:'25.00',
-                    src:require('../assets/img/shop/3.jpg')
+                    course_id:123,
+                    course_name:'你不知道的集中式',
+                    course_tags:[],
+                    course_intro:'',
+                    course_capacity:3,
+                    couse_category:'Jackets',
+                    course_price:18.00,
+                    course_start_time: '2020.01.20',
+                    course_hours: '1小時30分鐘',
+                    course_mode:'線上課程',
+                    course_image:require('../assets/img/home/slider2.jpg')
                 },
                 {
-                    id:4,
-                    name:'SKULL TEE',
-                    type:'Jackets',
-                    price:'30.00',
-                    src:require('../assets/img/shop/4.jpg')
+                    course_id:123,
+                    course_name:'你不知道的集中式',
+                    course_tags:[],
+                    course_intro:'',
+                    course_capacity:3,
+                    couse_category:'Jackets',
+                    course_price:18.00,
+                    course_start_time: '2020.01.20',
+                    course_hours: '1小時30分鐘',
+                    course_mode:'線上課程',
+                    course_image:require('../assets/img/home/slider2.jpg')
                 },
                 {
-                    id:5,
-                    name:'MANGO WINTER',
-                    type:'Sweaters',
-                    price:'50.00',
-                    src:require('../assets/img/shop/5.jpg')
+                    course_id:123,
+                    course_name:'你不知道的集中式',
+                    course_tags:[],
+                    course_intro:'',
+                    course_capacity:3,
+                    couse_category:'Jackets',
+                    course_price:18.00,
+                    course_start_time: '2020.01.20',
+                    course_hours: '1小時30分鐘',
+                    course_mode:'線上課程',
+                    course_image:require('../assets/img/home/slider2.jpg')
                 },
                 {
-                    id:6,
-                    name:'SHIRT',
-                    type:'Denim',
-                    price:'34.00',
-                    src:require('../assets/img/shop/6.jpg')
+                    course_id:123,
+                    course_name:'你不知道的集中式',
+                    course_tags:[],
+                    course_intro:'',
+                    course_capacity:3,
+                    couse_category:'Jackets',
+                    course_price:18.00,
+                    course_start_time: '2020.01.20',
+                    course_hours: '1小時30分鐘',
+                    course_mode:'線上課程',
+                    course_image:require('../assets/img/home/slider2.jpg')
                 },
-                {
-                    id:7,
-                    name:'TRUCKER JACKET',
-                    type:'Jackets',
-                    price:'38.00',
-                    src:require('../assets/img/shop/7.jpg')
-                },
-                {
-                    id:8,
-                    name:'COATS',
-                    type:'Jackets',
-                    price:'25.00',
-                    src:require('../assets/img/shop/8.jpg')
-                },{
-                    id:9,
-                    name:'MANGO WINTER',
-                    type:'Sweaters',
-                    price:'50.00',
-                    src:require('../assets/img/shop/9.jpg')
-                },
-                {
-                    id:10,
-                    name:'SHIRT',
-                    type:'Denim',
-                    price:'34.00',
-                    src:require('../assets/img/shop/10.jpg')
-                },
-                {
-                    id:11,
-                    name:'TRUCKER JACKET',
-                    type:'Jackets',
-                    price:'38.00',
-                    src:require('../assets/img/shop/11.jpg')
-                },
-                {
-                    id:12,
-                    name:'COATS',
-                    type:'Jackets',
-                    price:'25.00',
-                    src:require('../assets/img/shop/12.jpg')
-                }
             ]
         }),
     }
