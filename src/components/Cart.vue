@@ -142,7 +142,7 @@
               }).then((data)=>{
 
                   if(data.status||true){
-                    let new_window = window.open("https://www.w3schools.com","_blank");
+                    let new_window = window.open("https://www.newebpay.com/main/login_center/single_login","_blank");
                     console.log(new_window);
                       // data.purchase_id;
                   }

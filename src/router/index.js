@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import ShopCourse from '@/components/ShopCourse'
 import Product from '@/components/Product'
+import PaymentDone from '@/components/PaymentDone'
 import TeacherIntro from '@/components/TeacherIntro'
 import Post from '@/components/Post'
 import Cart from '@/components/Cart'
@@ -36,6 +37,11 @@ const router = new Router({
           path: '/product',
           component: Product,
           name: 'Product'
+        },
+        {
+          path: '/payment_done',
+          component: PaymentDone,
+          name: 'PaymentDone'
         },
         {
           path: '/TeacherIntro',
