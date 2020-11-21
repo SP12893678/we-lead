@@ -14,6 +14,11 @@
             </v-list-item-action>
         </v-list-item>
         <v-divider></v-divider>
+        <v-pagination
+            class="pa-2"
+            v-model="pagination.page"
+            :length="paginationLength"
+        ></v-pagination>
         <!-- <v-list-item two-line class="mt-4">
             <v-list-item-content>
                 <v-pagination
@@ -55,16 +60,16 @@
         </v-list-item> -->
         <v-row>
             <div
+                v-for="course in courses"
+                :key="course.id"
                 class="col-md-3 col-sm-6 col-xs-12"
-                :key="pro.id"
-                v-for="pro in products"
             >
                 <v-hover v-slot:default="{ hover }">
                     <v-card class="mx-auto" color="grey lighten-4">
                         <v-img
                             class="white--text align-end"
                             :aspect-ratio="1.5"
-                            :src="pro.src"
+                            :src="course.course_image"
                         >
                             <v-card-actions class="mb-0 pb-0">
                                 <v-spacer></v-spacer>
@@ -74,7 +79,7 @@
                                     small
                                     label
                                     dark
-                                    >線上課程</v-chip
+                                    >{{ course.course_mode }}</v-chip
                                 >
                             </v-card-actions>
                         </v-img>
@@ -83,11 +88,11 @@
                                 <v-list-item-title
                                     class="headline font-weight-black mt-2 mb-2"
                                 >
-                                    你不知道的5件事
+                                    {{ course.course_name }}
                                 </v-list-item-title>
                                 <div class="boxx">
                                     <p class="ellipsiss">
-                                        無所不架JA.anything是設計相關小型工作室，製作項目包含網頁設計、app製作、網路遊戲、影音特效剪輯等。
+                                        {{ course.course_intro }}
                                     </p>
                                 </div>
                                 <v-row>
@@ -98,7 +103,8 @@
                                             outlined
                                             small
                                         >
-                                            課程時間 2020.10.20
+                                            課程時間
+                                            {{ course.course_start_time }}
                                         </v-chip>
                                         <v-chip
                                             class="mt-2"
@@ -106,17 +112,20 @@
                                             outlined
                                             small
                                         >
-                                            上課時長 1小時30分鐘
+                                            上課時長
+                                            {{ course.course_hours }}
                                         </v-chip>
-                                        <!-- <v-chip class="mb-2">課程時間 2020.10.20</v-chip> -->
-                                        <!-- <v-list-item-subtitle class="mb-2">上課時長 1.5小時</v-list-item-subtitle> -->
                                         <v-list-item-subtitle
                                             class="ma-2 font-weight-black"
-                                            >課程人數限制20人</v-list-item-subtitle
+                                            >課程人數限制{{
+                                                course.course_capacity
+                                            }}人</v-list-item-subtitle
                                         >
                                     </v-col>
                                     <v-col class="d-flex align-end justify-end">
-                                        <h1 class="teal--text">$1800</h1>
+                                        <h1 class="teal--text">
+                                            ${{ course.course_price }}
+                                        </h1>
                                     </v-col>
                                 </v-row>
                                 <v-card-actions
@@ -153,12 +162,17 @@
                                     </v-avatar>
                                     <v-spacer></v-spacer>
                                     <v-btn
-                                        @click="goToEditPage(pro.id)"
+                                        @click="goToEditPage(course.id)"
                                         color="blue"
                                         outlined
                                         >編輯</v-btn
                                     >
-                                    <v-btn color="red" outlined>刪除</v-btn>
+                                    <v-btn
+                                        @click="deleteCourse(course.id)"
+                                        color="red"
+                                        outlined
+                                        >刪除</v-btn
+                                    >
                                 </v-card-actions>
                             </v-list-item-content>
                         </v-list-item>
@@ -170,105 +184,166 @@
 </template>
 
 <script>
+import teachCourse from '@/store/modules/teachCourse'
+
 export default {
     data() {
         return {
             loading: false,
-            products: [
-                {
-                    id: 1,
-                    name: "BLACK TEE",
-                    type: "Jackets",
-                    price: "18.00",
-                    src: require("../assets/img/home/slider2.jpg"),
-                },
-                {
-                    id: 2,
-                    name: "WHITE TEE",
-                    type: "Polo",
-                    price: "40.00",
-                    src: require("../assets/img/shop/2.jpg"),
-                },
-                {
-                    id: 3,
-                    name: "Zara limited...",
-                    type: "Denim",
-                    price: "25.00",
-                    src: require("../assets/img/shop/3.jpg"),
-                },
-                {
-                    id: 4,
-                    name: "SKULL TEE",
-                    type: "Jackets",
-                    price: "30.00",
-                    src: require("../assets/img/shop/4.jpg"),
-                },
-                {
-                    id: 5,
-                    name: "MANGO WINTER",
-                    type: "Sweaters",
-                    price: "50.00",
-                    src: require("../assets/img/shop/5.jpg"),
-                },
-                {
-                    id: 6,
-                    name: "SHIRT",
-                    type: "Denim",
-                    price: "34.00",
-                    src: require("../assets/img/shop/6.jpg"),
-                },
-                {
-                    id: 7,
-                    name: "TRUCKER JACKET",
-                    type: "Jackets",
-                    price: "38.00",
-                    src: require("../assets/img/shop/7.jpg"),
-                },
-                {
-                    id: 8,
-                    name: "COATS",
-                    type: "Jackets",
-                    price: "25.00",
-                    src: require("../assets/img/shop/8.jpg"),
-                },
-                {
-                    id: 9,
-                    name: "MANGO WINTER",
-                    type: "Sweaters",
-                    price: "50.00",
-                    src: require("../assets/img/shop/9.jpg"),
-                },
-                {
-                    id: 10,
-                    name: "SHIRT",
-                    type: "Denim",
-                    price: "34.00",
-                    src: require("../assets/img/shop/10.jpg"),
-                },
-                {
-                    id: 11,
-                    name: "TRUCKER JACKET",
-                    type: "Jackets",
-                    price: "38.00",
-                    src: require("../assets/img/shop/11.jpg"),
-                },
-                {
-                    id: 12,
-                    name: "COATS",
-                    type: "Jackets",
-                    price: "25.00",
-                    src: require("../assets/img/shop/12.jpg"),
-                },
-            ],
-        };
+            pagination: {
+                page: 1,
+                capacity: 12,
+            },
+        }
+    },
+    mounted() {
+        this.$store.registerModule('teachcourse', teachCourse)
+        this.$store.dispatch('teachcourse/getCourseData')
+    },
+    computed: {
+        courses() {
+            if (!this.$store.state.teachcourse) return []
+            let the_courses = this.$store.state.teachcourse.courses.filter(
+                (item, index) => {
+                    return (
+                        index <
+                            this.pagination.capacity * this.pagination.page &&
+                        index >=
+                            this.pagination.capacity *
+                                (this.pagination.page - 1)
+                    )
+                }
+            )
+            return the_courses
+        },
+        paginationLength() {
+            if (!this.$store.state.teachcourse) return 1
+            let length = Math.ceil(
+                this.$store.state.teachcourse.courses.length /
+                    this.pagination.capacity
+            )
+            return length
+        },
     },
     methods: {
         goToEditPage(id) {
-            console.log(this.$route);
-            this.$router.push({ path: "/editcourse", query: { id: id } });
+            console.log(this.$route)
+            this.$router.push({ path: '/editcourse', query: { id: id } })
+        },
+        deleteCourse(id) {
+            this.$store.commit(
+                'dialogBox',
+                {
+                    dialog: true,
+                    option: {
+                        title: '你確定要刪除嗎?',
+                        message: '刪除後將無法再復原',
+                        btnConfirmText: '確定',
+                        btnCancelShow: true,
+                        btnConfirmEvent: () => {
+                            this.$store.dispatch('teachcourse/deleteCourse', id)
+                            this.$store.commit('snackBar', {
+                                show: true,
+                                message: '刪除成功',
+                            })
+                        },
+                    },
+                },
+                { root: true }
+            )
         },
     },
-};
+    beforeDestroy() {
+        this.$store.unregisterModule('teachcourse')
+    },
+}
+
+const products = [
+    {
+        id: 1,
+        name: 'BLACK TEE',
+        type: 'Jackets',
+        price: '18.00',
+        src: require('../assets/img/home/slider2.jpg'),
+    },
+    {
+        id: 2,
+        name: 'WHITE TEE',
+        type: 'Polo',
+        price: '40.00',
+        src: require('../assets/img/shop/2.jpg'),
+    },
+    {
+        id: 3,
+        name: 'Zara limited...',
+        type: 'Denim',
+        price: '25.00',
+        src: require('../assets/img/shop/3.jpg'),
+    },
+    {
+        id: 4,
+        name: 'SKULL TEE',
+        type: 'Jackets',
+        price: '30.00',
+        src: require('../assets/img/shop/4.jpg'),
+    },
+    {
+        id: 5,
+        name: 'MANGO WINTER',
+        type: 'Sweaters',
+        price: '50.00',
+        src: require('../assets/img/shop/5.jpg'),
+    },
+    {
+        id: 6,
+        name: 'SHIRT',
+        type: 'Denim',
+        price: '34.00',
+        src: require('../assets/img/shop/6.jpg'),
+    },
+    {
+        id: 7,
+        name: 'TRUCKER JACKET',
+        type: 'Jackets',
+        price: '38.00',
+        src: require('../assets/img/shop/7.jpg'),
+    },
+    {
+        id: 8,
+        name: 'COATS',
+        type: 'Jackets',
+        price: '25.00',
+        src: require('../assets/img/shop/8.jpg'),
+    },
+    {
+        id: 9,
+        name: 'MANGO WINTER',
+        type: 'Sweaters',
+        price: '50.00',
+        src: require('../assets/img/shop/9.jpg'),
+    },
+    {
+        id: 10,
+        name: 'SHIRT',
+        type: 'Denim',
+        price: '34.00',
+        src: require('../assets/img/shop/10.jpg'),
+    },
+    {
+        id: 11,
+        name: 'TRUCKER JACKET',
+        type: 'Jackets',
+        price: '38.00',
+        src: require('../assets/img/shop/11.jpg'),
+    },
+    {
+        id: 12,
+        name: 'COATS',
+        type: 'Jackets',
+        price: '25.00',
+        src: require('../assets/img/shop/12.jpg'),
+    },
+]
 </script>
 
 <style>
