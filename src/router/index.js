@@ -9,10 +9,12 @@ import Post from '@/components/Post'
 import Cart from '@/components/Cart'
 import Layout from '@/components/Layout'
 import Login from '@/components/Login'
+import Register from '@/components/Register'
 import TeachCourse from '@/components/TeachCourse'
 import NewCourse from '@/components/NewCourse'
 import EditCourse from '@/components/EditCourse'
 import AboutUs from '@/components/AboutUs'
+
 
 Vue.use(Router)
 
@@ -28,10 +30,10 @@ const router = new Router({
           name: 'Home'
         },
         {
-          path:'/ShopCourse',
-          component:ShopCourse,
-          name:'ShopCourse',
-          props:true
+          path: '/ShopCourse',
+          component: ShopCourse,
+          name: 'ShopCourse',
+          props: true
         },
         {
           path: '/product',
@@ -84,6 +86,11 @@ const router = new Router({
       path: '/login',
       component: Login,
       name: 'Login'
+    },
+    {
+      path: '/register',
+      component: Register,
+      name: 'Register'
     }
   ],
   mode: 'history'
