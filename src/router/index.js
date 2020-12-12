@@ -14,92 +14,97 @@ import TeachCourse from '@/components/TeachCourse'
 import NewCourse from '@/components/NewCourse'
 import EditCourse from '@/components/EditCourse'
 import AboutUs from '@/components/AboutUs'
-
+import teachCourseDetail from '@/components/teachcourseDetail'
 
 Vue.use(Router)
 
 const router = new Router({
-  routes: [
-    {
-      path: '/',
-      component: Layout,
-      children: [
+    routes: [
         {
-          path: '/',
-          component: Home,
-          name: 'Home'
+            path: '/',
+            component: Layout,
+            children: [
+                {
+                    path: '/',
+                    component: Home,
+                    name: 'Home'
+                },
+                {
+                    path: '/ShopCourse',
+                    component: ShopCourse,
+                    name: 'ShopCourse',
+                    props: true
+                },
+                {
+                    path: '/product',
+                    component: Product,
+                    name: 'Product'
+                },
+                {
+                    path: '/payment_done',
+                    component: PaymentDone,
+                    name: 'PaymentDone'
+                },
+                {
+                    path: '/TeacherIntro',
+                    component: TeacherIntro,
+                    name: 'TeacherIntro'
+                },
+                {
+                    path: '/post',
+                    component: Post,
+                    name: 'Post'
+                },
+                {
+                    path: '/cart',
+                    component: Cart,
+                    name: 'Cart'
+                },
+                {
+                    path: '/teachcourse',
+                    component: TeachCourse,
+                    name: 'TeachCourse'
+                },
+                {
+                    path: '/newcourse',
+                    component: NewCourse,
+                    name: 'NewCourse'
+                },
+                {
+                    path: '/editcourse',
+                    component: EditCourse,
+                    name: 'EditCourse'
+                },
+                {
+                    path: '/AboutUs',
+                    component: AboutUs,
+                    name: 'AboutUs'
+                },
+                {
+                    path: '/teachcourse/:id',
+                    component: teachCourseDetail,
+                    name: 'TeachCourseDetail'
+                }
+            ]
         },
         {
-          path: '/ShopCourse',
-          component: ShopCourse,
-          name: 'ShopCourse',
-          props: true
+            path: '/login',
+            component: Login,
+            name: 'Login'
         },
         {
-          path: '/product',
-          component: Product,
-          name: 'Product'
-        },
-        {
-          path: '/payment_done',
-          component: PaymentDone,
-          name: 'PaymentDone'
-        },
-        {
-          path: '/TeacherIntro',
-          component: TeacherIntro,
-          name: 'TeacherIntro'
-        },
-        {
-          path: '/post',
-          component: Post,
-          name: 'Post'
-        },
-        {
-          path: '/cart',
-          component: Cart,
-          name: 'Cart'
-        },
-        {
-          path: '/teachcourse',
-          component: TeachCourse,
-          name: 'TeachCourse'
-        },
-        {
-          path: '/newcourse',
-          component: NewCourse,
-          name: 'NewCourse'
-        },
-        {
-          path: '/editcourse',
-          component: EditCourse,
-          name: 'EditCourse'
-        },
-        {
-          path: '/AboutUs',
-          component: AboutUs,
-          name: 'AboutUs'
+            path: '/register',
+            component: Register,
+            name: 'Register'
         }
-      ]
-    },
-    {
-      path: '/login',
-      component: Login,
-      name: 'Login'
-    },
-    {
-      path: '/register',
-      component: Register,
-      name: 'Register'
-    }
-  ],
-  mode: 'history'
-},
+    ],
+    mode: 'history'
+}
 
 )
 
 router.beforeEach(async (to, from, next) => {
-  next()
+    next()
 })
 
 export default router
